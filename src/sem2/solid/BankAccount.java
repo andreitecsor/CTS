@@ -12,11 +12,15 @@ public class BankAccount {
         this.balance = 0;
     }
 
-    public void withdraw(long amount) {
+    public void withdraw(long amount) throws InsufficientFundsException {
+        if (amount > balance)
+            throw new InsufficientFundsException("Insuficient funds " + balance);
+        System.out.println("withdrawing " + amount + " from " + iban);
         balance -= amount;
     }
 
     public void deposit(long amount) {
+        System.out.println("Adding " + amount + " to " + iban);
         balance += amount;
     }
 
@@ -24,23 +28,11 @@ public class BankAccount {
         return balance;
     }
 
-    public void setBalance(long balance) {
-        this.balance = balance;
-    }
-
     public String getIban() {
         return iban;
     }
 
-    public void setIban(String iban) {
-        this.iban = iban;
-    }
-
     public Person getAccountHolder() {
         return accountHolder;
-    }
-
-    public void setAccountHolder(Person accountHolder) {
-        this.accountHolder = accountHolder;
     }
 }
