@@ -1,4 +1,4 @@
-package Sem2;
+package sem2;
 
 public class IncorrectDayException extends Exception {
 
