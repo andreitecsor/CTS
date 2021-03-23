@@ -1,4 +1,4 @@
-package course.design_patterns.singleton.ref_static;
+package course.design_patterns.creational.singleton.ref_static;
 
 public class MainSingletonRef {
     public static void main(String[] args) {

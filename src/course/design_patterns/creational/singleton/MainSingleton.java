@@ -1,4 +1,4 @@
-package course.design_patterns.singleton;
+package course.design_patterns.creational.singleton;
 
 public class MainSingleton {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package course.design_patterns.singleton.enum_example;
+package course.design_patterns.creational.singleton.enum_example;
 
 public enum DatabaseConnection {
     DATABASE_CONNECTION;

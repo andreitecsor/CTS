@@ -1,4 +1,4 @@
-package course.design_patterns.singleton.registry;
+package course.design_patterns.creational.singleton.registry;
 
 import java.util.HashMap;
 
@@ -16,7 +16,6 @@ public class DatabaseConnection {
         this.port = port;
         this.database = db;
     }
-
 
     public static DatabaseConnection getInstance(String ip, int port, String db) {
         DatabaseConnection connection = connectionRegistry.get(ip);

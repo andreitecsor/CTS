@@ -1,4 +1,4 @@
-package course.design_patterns.singleton.registry;
+package course.design_patterns.creational.singleton.registry;
 
 public class MainSingletonRegistry {
     public static void main(String[] args) {
