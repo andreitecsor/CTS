@@ -2,10 +2,19 @@ package seminar.sem6.builder;
 
 public class TestBuilder {
     public static void main(String[] args) {
-        //1. construiesti obiectul
-        SuperErou superErou = new SuperErou();
-        superErou.nume = "SuperDavid";
+        SuperErou vlad = new SuperErou.SuperErouBuilder("Vlad the Impaler", 100)
+                .setArmaDreapta(new Arma())
+                .setArmaStanga(new Arma())
+                .build();
 
-        SuperErou superErou2 = new SuperErou("AnduMan", 100, false, false, new Arma(), null, null, null);
+        SuperErou thief = new SuperErou.SuperErouBuilder("Thief", 50)
+                .esteNegativ()
+                .esteRanit()
+                .build();
+
+        SuperErou thief2 = new SuperErou.SuperErouBuilder("Thief", 50)
+                .esteNegativ()
+                .esteRanit()
+                .build();
     }
 }
