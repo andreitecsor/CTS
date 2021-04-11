@@ -1,0 +1,93 @@
+ANDREI-MARIUS TECȘOR
+GRUPA 1087
+SERIA E
+
+Pentru fiecare problema, se vor ilustra (unde se poate si este relevant) si liniile unde aceasta se gaseste in codul initial.
+Mentiune: ordinea problemelor nu este relevanta, intrucat au ordonate ulterior pt o mai buna vizibiltate.
+
+[Formatting]
+1. Pentru o mai buna intelegere ar trebui ca fiecare atribut al clasei sa fie pe linie separata
+    - liniile 4-6
+2. Eliminarea lui else din cazurile in care aruncam exceptii
+    - linia 26, 56
+3. Eliminarea metodelor System.out.println("...") din getterii clasei
+    - linia 9, 14
+4. Constructorul sa fie pozitionat dupa atribute pentru o citire mai usoare
+    - liniile 53-61
+5. Folosirea lui this in cazul atributelor care tin de clasa pentru o mai buna intelegere
+    - liniile: 10, 20, 27, 32, 57
+6. Organizarea clasei : Atribute , constructor, gettteri/setteri, alte metode ale clasei, metoda toString,
+    metode statice ale clasei
+7. Adaugarea de acolade acolo unde nu exista pentru o vizibilitatea mai buna a codului
+8. Neincadrarea codului in lungime intr-un display de 14inch
+9. Eliminarea comentariilor
+10. Eliminarea variabilelor/metodelor irelevante (YAGNI)
+    - linia 36: int vb = 10;
+    - linia 35: metoda print() -> Afiseaza o informatie irelevanta pentru clasa noastra. Avem deja toString.
+   Daca este nevoie de aceasta metoda se poate adauga in interfata InterfataCont sau intr-o clasa abstracta.
+   Am adaugat la "type" cuvantul "Account" pentru o evidentiere a faptului ca este vorba despre un cont.
+11. Folosirea de wrappere in loc de primitive
+12. Folosirea lui for each in loc de for-loop standard
+    - linia 44
+
+[Meaningful Names]
+13. Este folosit snake_case in loc mixedCamelCase (standard JAVA)
+    - linia 4: valoare_imprumut
+    - linia 5: tip_cont
+    - linia 31: to_string [Always override toString: General Programming]
+    - linia 53: tip_cont
+14. Nume specifice pentru metode
+    - linia 8: imprumut -> getValoareImprumut
+    - linia 8: setValoare -> setValoareImprumut
+    - linia 40: calculeaza -> calculeazaComisionTotalBrokeri
+
+[Exceptions]
+15. Crearea de Exceptii specifice raportate nevoilor clasei
+    - linia 25, 55
+
+[Accessibility Extensibility]
+16. Schimbarea modificatorului de acces din default in private pentru toate atributele clasei
+    - liniile: 4-5
+
+[Methods]
+17. Verificarea tuturor parametrilor in cazul constructorului si a al setterilor
+18. Folosirea unei colectii (List) in loc de vector, intrucat nu stim ce structuri de date vom folosi pentru prelucrare
+    - linia 40
+
+[Enums and Annotations]
+19. Pentru tipul contului ar fi recomandata crearea unei enumarari cu valoarea atributelor static final int
+    - linia 5-6 + linia 53 int -> TipCont
+
+[Classes and Interfaces]
+20. Getteri pentru toate atributele
+21. Folosirea unei interfete pentru a implementa metoda obligatorie getRataLunara()
+    - linia 19
+
+[Mutability]
+22. Transformarea constantelor (magic numbers) din interiorul functiei in variabile statice finale
+    - linia 42: temp -> public static final int ZILE_AN = 365;
+
+[Functions]
+23. O metoda trebuie sa faca un singur lucru => spargere in metode mai mici care fac un singur lucru
+    - linia 46: taxeazaContul
+    - linia 48: calculeazaDobandaPrincipala
+24. Eliminarea variabilelor intermediare inutile
+    - linia 43: Cont cont
+
+[Business Logic]
+25. Atributul zileActiv nu este initializat, prin urmare vom considera ca la momentul crearii contului zileActiv
+vor fi considerate ca fiind 0.
+Prin urmare, la nivelul metodei calculeazaComisionConturiPremiumSiSuperPremium se va verifica
+aceasta variabila: daca este egala cu 0, se va arunca exceptie.
+
+
+[Personal additions + DIP]
+Cu mentiunea ca sunt sanse sa nu fi inteles logica din spatele clasei, voi face un leap of faith (in me)
+si voi modifica clasa in felul urmator:
+
+Pentru exemplul DIP, am considerat ca un cont este gestionat de un Broker.
+Desi un broker poate gestiona toate tipurile de conturi, acesta ia comision doar la anumite tipuri de conturi.
+
+Pentru exemplul din codul initial, am considerat clasa ExpertBroker care implementeaza interfata Broker:
+- care ia comision doar pentru conturile premium si super premium;
+- al carui comision se calculeaza standard impartind procentele la 100.
