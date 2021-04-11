@@ -3,7 +3,7 @@ GRUPA 1087
 SERIA E
 
 Pentru fiecare problema, se vor ilustra (unde se poate si este relevant) si liniile unde aceasta se gaseste in codul initial.
-Mentiune: ordinea problemelor nu este relevanta, intrucat au ordonate ulterior pt o mai buna vizibiltate.
+Mentiune: ordinea problemelor nu este relevanta, intrucat au ordonate ulterior pentru o mai buna vizibiltate.
 
 [Formatting]
 1. Pentru o mai buna intelegere ar trebui ca fiecare atribut al clasei sa fie pe linie separata
@@ -65,7 +65,7 @@ Mentiune: ordinea problemelor nu este relevanta, intrucat au ordonate ulterior p
 
 [Mutability]
 22. Transformarea constantelor (magic numbers) din interiorul functiei in variabile statice finale
-    - linia 42: temp -> public static final int ZILE_AN = 365;
+    - linia 42: temp, 365 -> public static final int ZILE_AN = 365;
 
 [Functions]
 23. O metoda trebuie sa faca un singur lucru => spargere in metode mai mici care fac un singur lucru
@@ -77,7 +77,7 @@ Mentiune: ordinea problemelor nu este relevanta, intrucat au ordonate ulterior p
 [Business Logic]
 25. Atributul zileActiv nu este initializat, prin urmare vom considera ca la momentul crearii contului zileActiv
 vor fi considerate ca fiind 0.
-Prin urmare, la nivelul metodei calculeazaComisionConturiPremiumSiSuperPremium se va verifica
+Prin urmare, la nivelul metodei calculeazaComisionTotalBrokeri se va verifica
 aceasta variabila: daca este egala cu 0, se va arunca exceptie.
 
 
