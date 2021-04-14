@@ -6,7 +6,8 @@ public class DonaldDuck implements ActiuniDisney {
 
     private int power;
 
-    public static String getDENUMIRE() {
+    @Override
+    public String getNume() {
         return DENUMIRE;
     }
 

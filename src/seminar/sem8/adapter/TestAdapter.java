@@ -17,5 +17,13 @@ public class TestAdapter {
 
         ArrayList<ACMECaracterJoc> caractere = new ArrayList<>();
         caractere.add(dragon);
+
+        AdaptorDisneyLaAcme adaptorDonald = new AdaptorDisneyLaAcme(donaldDuck);
+        caractere.add(adaptorDonald);
+        System.out.println("----");
+        for (ACMECaracterJoc acmeCaracterJoc : caractere) {
+            acmeCaracterJoc.seDeplaseaza();
+            acmeCaracterJoc.esteLovit(50);
+        }
     }
 }
