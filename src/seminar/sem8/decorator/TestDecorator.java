@@ -17,5 +17,6 @@ public class TestDecorator {
         dragon = new DecoratorRanit(dragon);
         dragon.esteLovit(50);
         dragon.seDeplaseaza();
+
     }
 }
