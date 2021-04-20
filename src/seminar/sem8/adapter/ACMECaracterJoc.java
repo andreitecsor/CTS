@@ -4,6 +4,9 @@ public abstract class ACMECaracterJoc {
     protected String nume;
     protected int puncteViata;
 
+    public ACMECaracterJoc() {
+    }
+
     public ACMECaracterJoc(String nume, int puncteViata) {
         super();
         this.nume = nume;

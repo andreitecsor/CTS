@@ -13,9 +13,9 @@ public class DecoratorScut extends DecoratorCaracter {
 
     @Override
     public void esteLovit(int puncte) {
-        int puncteLovitura = puncteViata - this.nivelScut;
+        int puncteLovitura = puncte - this.nivelScut;
         if (puncteLovitura > 0) {
-            super.esteLovit(puncteLovitura);
+            this.caracterJoc.esteLovit(puncteLovitura);
         }
 
     }
