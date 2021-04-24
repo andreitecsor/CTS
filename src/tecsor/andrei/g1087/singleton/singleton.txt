@@ -9,9 +9,10 @@ Descrierea problemei care trebuie rezolvată prin pattern:
         Se dorește o conexiune unică între cele două servere, toate request-urile clientului să fie procesate de serverul
     aplicației apoi făcute operațiile la nivelul bazei de date.
 
+//TODO: De reformulat
 Avantaje pentru soluție:
     - Securitate, întrucât clientul nu are access direct la baza de date pentru a face actualizări.
-    - Există o singură instanță activă în momentul care pornește serverul, cee
+    - Există o singură instanță activă în momentul care pornește serverul.
 
 Dezavantaje:
     - Creează dependințe puternice, de pildă: cu driverul, ceea ce pe viitor poate fi un dezavantaj la versiunile mai noi

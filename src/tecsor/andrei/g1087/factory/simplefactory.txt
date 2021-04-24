@@ -1,0 +1,23 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        Aplicația este o rețea de socializare, prin urmare va exista un newsfeed în care utilizatorul va putea vedea ce au
+    mai realizat persoanele pe care le urmărește. Aceste realizări vor fi afișate sub forma unor postări care se vor genera
+    automat în funcție de activitatea utilizatorului.
+        Cu mențiunea că pe viitor se dorește extinderea acestora, în primă instanță, există 4 tipuri de postări:
+        - CHALLENGE -> când utilizatorul se alătură unei provocări noi
+        - AWARD -> când utilizator finalizează o etapă dintr-o provocare
+        - MILESTONE -> când utilizatorul își depăsește recordul personal în cadrul unei provocări
+        - FOLLOW -> când utilizatorul începe să urmărească un alt utilizator
+
+//TODO: De formulat
+Avantaje pentru soluție:
+    -
+    -
+
+Dezavantaje:
+    -
+    -
+
+
