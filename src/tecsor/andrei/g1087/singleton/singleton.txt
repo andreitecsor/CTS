@@ -1,0 +1,19 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        Aplicația este o rețea de socializare, prin urmare are nevoie de o gestionare eficientă a bazei de date.
+        Pentru soluția de baze de date se va folosi Neo4j (baze de date tip graf); pe lângă driver-ul oferit de Neo4j,
+    singurele informații necesare pentru stabilirea conexiunii între serverul aplicației și serverul bazei de date fiind
+    datele utilizatorului care gestionează baza de date și URI-ul specific acesteia.
+        Se dorește o conexiune unică între cele două servere, toate request-urile clientului să fie procesate de serverul
+    aplicației.
+
+Avantaje pentru soluție:
+    -
+    -
+
+Dezavantaje:
+    -
+    -
+
