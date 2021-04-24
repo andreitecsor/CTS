@@ -7,13 +7,16 @@ Descrierea problemei care trebuie rezolvată prin pattern:
     singurele informații necesare pentru stabilirea conexiunii între serverul aplicației și serverul bazei de date fiind
     datele utilizatorului care gestionează baza de date și URI-ul specific acesteia.
         Se dorește o conexiune unică între cele două servere, toate request-urile clientului să fie procesate de serverul
-    aplicației.
+    aplicației apoi făcute operațiile la nivelul bazei de date.
 
 Avantaje pentru soluție:
-    -
-    -
+    - Securitate, întrucât clientul nu are access direct la baza de date pentru a face actualizări.
+    - Există o singură instanță activă în momentul care pornește serverul, cee
 
 Dezavantaje:
-    -
-    -
+    - Creează dependințe puternice, de pildă: cu driverul, ceea ce pe viitor poate fi un dezavantaj la versiunile mai noi
+    sau alte variante de conectare
+    - Partea de testare si debug este destul de complicată, atât a conexiunii, cât și a claselor de care aceasta depinde,
+    motivul principal fiind tot dependințele.
+    - Codul te poate încurca prin modalitatea de implementare (De ex:Dacă uităm să facem constructorul private... may God have mercy.)
 
