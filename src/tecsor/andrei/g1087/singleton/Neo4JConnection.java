@@ -35,6 +35,21 @@ public class Neo4JConnection {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Neo4JConnection that = (Neo4JConnection) o;
+
+        return neo4JDriver.equals(that.neo4JDriver);
+    }
+
+    @Override
+    public int hashCode() {
+        return neo4JDriver != null ? neo4JDriver.hashCode() : 0;
+    }
+
+    @Override
     public String toString() {
         return "Neo4JConnection{" +
                 "neo4JDriver=" + neo4JDriver +
