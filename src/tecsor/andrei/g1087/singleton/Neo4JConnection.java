@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class Neo4JConnection {
     private Neo4JDriver neo4JDriver;
-    public static Neo4JConnection instance = null;
+    private static Neo4JConnection instance = null;
 
     private Neo4JConnection() {
     }

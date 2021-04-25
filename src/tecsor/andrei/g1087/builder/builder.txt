@@ -1,0 +1,21 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        Aplicația este o rețea de socializare bazată pe green influencing și pe “Challenges -> Achievements”, prin care un
+    utilizator se înscrie în provocări de tip “Sustainable living”, astfel încât să facă un bine planetei, dar să-i
+    influențeze și alți oameni la rândul lor să facă același lucru.
+        O provocare are un număr mare de atribute(nu toate fiind obligatorii pentru completare), aceasta fiind impărțită
+    în mai multe multe etape principale(minim 3).
+        Se dorește găsirea unei soluții eficientă care să permită crearea unor noi instanțe de provocări astfel încât
+    să nu fie nevoie de completarea tuturor la crearea, dar nici să nu fie permisă omiterea pe celor importante.
+
+
+//TODO: De formulat
+Avantaje pentru soluție:
+    -
+    -
+
+Dezavantaje:
+    -
+    -
