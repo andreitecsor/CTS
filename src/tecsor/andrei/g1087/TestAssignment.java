@@ -4,6 +4,8 @@ import tecsor.andrei.g1087.builder.*;
 import tecsor.andrei.g1087.factory.FactoryPost;
 import tecsor.andrei.g1087.factory.Post;
 import tecsor.andrei.g1087.factory.Type;
+import tecsor.andrei.g1087.prototype.Badge;
+import tecsor.andrei.g1087.prototype.ColourStyle;
 import tecsor.andrei.g1087.singleton.Neo4JConnection;
 
 import java.time.LocalDate;
@@ -65,6 +67,23 @@ public class TestAssignment {
                 .addIntermediaryStage(new ComplexStage())
                 .build();
         System.out.println(noCar);
+        System.out.println();
+
+        //endregion BUILDER
+
+        //region PROTOTYPE
+        System.out.println("==============PROTOTYPE==============");
+        try {
+            Badge badge = new Badge(ColourStyle.BRONZE, "resources/recycleLogo.svg");
+            Badge clonedBadge1 = badge.clone();
+            Badge clonedBadge2 = badge.clone();
+            System.out.println(badge);
+            System.out.println(clonedBadge1);
+            System.out.println(clonedBadge2);
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        System.out.println();
 
         //endregion BUILDER
     }
