@@ -1,0 +1,16 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        Pe baza realizărilor, un utilizator primește diferite elemente decorative asupra profilului. Aceste elemente pot
+    se pot schimba automat în funcție de interacțiunea cu aplicația(doar dacă utilizatorul este de acord cu această opțiune)
+    sau le poate schimba singur după ce le deblochează.
+
+//TODO: De formulat
+Avantaje pentru soluție:
+    -
+    -
+
+Dezavantaje:
+    -
+    -
