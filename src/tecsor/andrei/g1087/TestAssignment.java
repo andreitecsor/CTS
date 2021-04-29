@@ -1,15 +1,7 @@
 package tecsor.andrei.g1087;
 
-import tecsor.andrei.g1087.builder.*;
+import tecsor.andrei.g1087.adapter.*;
 import tecsor.andrei.g1087.decorator.*;
-import tecsor.andrei.g1087.factory.FactoryPost;
-import tecsor.andrei.g1087.factory.Post;
-import tecsor.andrei.g1087.factory.Type;
-import tecsor.andrei.g1087.singleton.Neo4JConnection;
-
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
 
 public class TestAssignment {
     public static void main(String[] args) {
@@ -98,6 +90,24 @@ public class TestAssignment {
         profile.getUser().setDisplayName("Anonymous Andrei");
         profile = new ScoutDecorator(profile, true);
         profile.showProfile();
+        System.out.println();
         //endregion DECORATOR
+
+        //region ADAPTER
+        System.out.println("==============ADAPTER==============");
+        User userAdapter = new User("andrei_t", "Andrei Tecsor");
+        AvatarReactions avatarReactions = new Avatar(userAdapter, Gender.MALE);
+        avatarReactions.amazed();
+        avatarReactions.wink();
+        avatarReactions.smile();
+        System.out.println();
+        User userAdapter2 = new User("i_andrei", "Andrei Apple Fanboy");
+        Memoji memoji = new Memoji(true, false, Age.YOUNG);
+        AvatarReactions userAdapter2Memoji = new MemojiAvatarAdapter(userAdapter2, memoji);
+        userAdapter2Memoji.amazed();
+        userAdapter2Memoji.wink();
+        userAdapter2Memoji.smile();
+        System.out.println();
+        //endregion ADAPTER
     }
 }

@@ -1,0 +1,17 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        Aplicația are o funcționalitate prin care un utilizator își poate crea propriul avatar pe baza unor atribute.
+    Aceste avatare sunt folosite pentru a oferi o serie de reacții la activitatea altor utilizatori.
+        Totodată, se dorește posibilitatea de utilizare a avatarelor de tip Memoji (create pe dispozitive iOS) prin
+    folosirea framework-ului oferit de Apple.
+
+//TODO: De formulat
+Avantaje pentru soluție:
+    -
+    -
+
+Dezavantaje:
+    -
+    -
