@@ -1,17 +1,7 @@
 package tecsor.andrei.g1087;
 
-import tecsor.andrei.g1087.adapter.*;
-import tecsor.andrei.g1087.decorator.*;
-import tecsor.andrei.g1087.flyweight.BadgeDetails;
-import tecsor.andrei.g1087.flyweight.BadgeFactory;
-import tecsor.andrei.g1087.flyweight.BadgeType;
-import tecsor.andrei.g1087.flyweight.Model3D;
-import tecsor.andrei.g1087.proxy.PictureUpload;
-import tecsor.andrei.g1087.proxy.ProfilePicture;
-import tecsor.andrei.g1087.proxy.ProxyPictureUpload;
-import tecsor.andrei.g1087.proxy.exception.UploadFailedException;
-
-import java.time.LocalDate;
+import tecsor.andrei.g1087.composite.Challenge;
+import tecsor.andrei.g1087.composite.Stage;
 
 public class TestAssignment {
     public static void main(String[] args) {
@@ -89,76 +79,98 @@ public class TestAssignment {
         //endregion PROTOTYPE
 
         //region DECORATOR
-        System.out.println("==============DECORATOR==============");
-        User user = new User("andrei_t", "Andrei Tecsor");
-        Profile profile = new ProfileImpl(user);
-        profile.showProfile();
-        profile.getUser().increaseGreenPoints(100.0);
-        profile = new NatureDecorator(profile, 1, 3, 5, 6);
-        profile.showProfile();
-        profile.getUser().increaseGreenPoints(1200.0);
-        profile.getUser().setDisplayName("Anonymous Andrei");
-        profile = new ScoutDecorator(profile, true);
-        profile.showProfile();
-        System.out.println();
+//        System.out.println("==============DECORATOR==============");
+//        User user = new User("andrei_t", "Andrei Tecsor");
+//        Profile profile = new ProfileImpl(user);
+//        profile.showProfile();
+//        profile.getUser().increaseGreenPoints(100.0);
+//        profile = new NatureDecorator(profile, 1, 3, 5, 6);
+//        profile.showProfile();
+//        profile.getUser().increaseGreenPoints(1200.0);
+//        profile.getUser().setDisplayName("Anonymous Andrei");
+//        profile = new ScoutDecorator(profile, true);
+//        profile.showProfile();
+//        System.out.println();
         //endregion DECORATOR
 
         //region ADAPTER
-        System.out.println("==============ADAPTER==============");
-        User userAdapter = new User("andrei_t", "Andrei Tecsor");
-        AvatarReactions avatarReactions = new Avatar(userAdapter, Gender.MALE);
-        avatarReactions.amazed();
-        avatarReactions.wink();
-        avatarReactions.smile();
-        System.out.println();
-        User userAdapter2 = new User("i_andrei", "Andrei Apple Fanboy");
-        Memoji memoji = new Memoji(true, false, Age.YOUNG);
-        AvatarReactions userAdapter2Memoji = new MemojiAvatarAdapter(userAdapter2, memoji);
-        userAdapter2Memoji.amazed();
-        userAdapter2Memoji.wink();
-        userAdapter2Memoji.smile();
-        System.out.println();
+//        System.out.println("==============ADAPTER==============");
+//        User userAdapter = new User("andrei_t", "Andrei Tecsor");
+//        AvatarReactions avatarReactions = new Avatar(userAdapter, Gender.MALE);
+//        avatarReactions.amazed();
+//        avatarReactions.wink();
+//        avatarReactions.smile();
+//        System.out.println();
+//        User userAdapter2 = new User("i_andrei", "Andrei Apple Fanboy");
+//        Memoji memoji = new Memoji(true, false, Age.YOUNG);
+//        AvatarReactions userAdapter2Memoji = new MemojiAvatarAdapter(userAdapter2, memoji);
+//        userAdapter2Memoji.amazed();
+//        userAdapter2Memoji.wink();
+//        userAdapter2Memoji.smile();
+//        System.out.println();
         //endregion ADAPTER
 
         //region PROXY
-        System.out.println("==============PROXY==============");
-        PictureUpload picture1 = new ProfilePicture("picture1.jpeg", 26_000_000.0);
-        picture1.upload();
-        picture1.show();
-
-        try {
-            PictureUpload picture1Proxy = new ProxyPictureUpload(picture1);
-            picture1Proxy.upload();
-            picture1Proxy.show();
-        } catch (UploadFailedException e) {
-            e.printStackTrace();
-        }
-
-        PictureUpload picture2 = new ProfilePicture("picture2.jpeg", 18_000_000.0);
-        PictureUpload picture2Proxy = new ProxyPictureUpload(picture2);
-        picture2Proxy.upload();
-        picture2Proxy.show();
-        System.out.println();
+//        System.out.println("==============PROXY==============");
+//        PictureUpload picture1 = new ProfilePicture("picture1.jpeg", 26_000_000.0);
+//        picture1.upload();
+//        picture1.show();
+//
+//        try {
+//            PictureUpload picture1Proxy = new ProxyPictureUpload(picture1);
+//            picture1Proxy.upload();
+//            picture1Proxy.show();
+//        } catch (UploadFailedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        PictureUpload picture2 = new ProfilePicture("picture2.jpeg", 18_000_000.0);
+//        PictureUpload picture2Proxy = new ProxyPictureUpload(picture2);
+//        picture2Proxy.upload();
+//        picture2Proxy.show();
+//        System.out.println();
         //endregion PROXY
 
         //region FLYWEIGHT
-        System.out.println("==============FLYWEIGHT==============");
-        BadgeDetails badgeDetails1 = new BadgeDetails("Andrei",
-                "src/main/resources/assets/ch1.svg",
-                LocalDate.now());
-        BadgeDetails badgeDetails2 = new BadgeDetails("Marius",
-                "src/main/resources/assets/ch5.svg",
-                LocalDate.of(2021, 5, 1));
-        BadgeDetails badgeDetails3 = new BadgeDetails("Tecsor",
-                "src/main/resources/assets/ch3.svg",
-                LocalDate.of(2021, 3, 3));
-        Model3D silverBadge = BadgeFactory.getBadgeModel(BadgeType.SILVER);
-        Model3D platinumBadge = BadgeFactory.getBadgeModel(BadgeType.PLATINUM);
-        silverBadge.show(badgeDetails1);
-        silverBadge.show(badgeDetails2);
-        silverBadge.show(badgeDetails3);
-        platinumBadge.show(badgeDetails2);
-        System.out.println();
+//        System.out.println("==============FLYWEIGHT==============");
+//        BadgeDetails badgeDetails1 = new BadgeDetails("Andrei",
+//                "src/main/resources/assets/ch1.svg",
+//                LocalDate.now());
+//        BadgeDetails badgeDetails2 = new BadgeDetails("Marius",
+//                "src/main/resources/assets/ch5.svg",
+//                LocalDate.of(2021, 5, 1));
+//        BadgeDetails badgeDetails3 = new BadgeDetails("Tecsor",
+//                "src/main/resources/assets/ch3.svg",
+//                LocalDate.of(2021, 3, 3));
+//        Model3D silverBadge = BadgeFactory.getBadgeModel(BadgeType.SILVER);
+//        Model3D silverBadge2 = BadgeFactory.getBadgeModel(BadgeType.SILVER);
+//        Model3D platinumBadge = BadgeFactory.getBadgeModel(BadgeType.PLATINUM);
+//        silverBadge.show(badgeDetails1);
+//        silverBadge.show(badgeDetails2);
+//        silverBadge.show(badgeDetails3);
+//        platinumBadge.show(badgeDetails2);
+//        if (silverBadge.equals(silverBadge2)) {
+//            System.out.println("Unique silver badge");
+//        }
+//        System.out.println();
         //endregion FLYWEIGHT
+
+        //region COMPOSITE
+        System.out.println("==============COMPOSITE==============");
+        Challenge challenge = new Challenge("No car");
+        challenge.addNode(new Stage("2 days per week no car", 4));
+        challenge.addNode(new Stage("3 days per week no car", 6));
+        challenge.addNode(new Stage("4 days per week no car", 8));
+        System.out.println("Total weeks to complete all stages: " + challenge.getCondition());
+        Challenge expertChallenge = new Challenge("No car expert");
+        expertChallenge.addNode(challenge);
+        if (expertChallenge.isCompleted()) {
+            System.out.println("All the challenges and stages are completed");
+        }
+        expertChallenge.complete();
+        if (expertChallenge.isCompleted()) {
+            System.out.println("All the challenges and stages are completed");
+        }
+        //endregion COMPOSITE
     }
 }
