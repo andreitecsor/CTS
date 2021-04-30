@@ -1,0 +1,18 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        Actualmente, utilizatorul își poate încărca o poză de profil. Pentru acest aspect, folosim un serviciu cloud de
+    de la Google care funcționează pe următorul principiu: dacă depășim stocarea maximă inclusă în abonamentul nostru,
+    trebuie să plătim în plus o sumă X per MB.
+        Din cauza bugetului limitat, echipa a decis să punem o limitare de 25MB maxim per poză, astfel se dorește adăugarea
+    unui filtru în acest caz.
+
+//TODO: De formulat
+Avantaje pentru soluție:
+    -
+    -
+
+Dezavantaje:
+    -
+    -

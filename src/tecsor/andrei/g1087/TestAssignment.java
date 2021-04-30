@@ -2,6 +2,10 @@ package tecsor.andrei.g1087;
 
 import tecsor.andrei.g1087.adapter.*;
 import tecsor.andrei.g1087.decorator.*;
+import tecsor.andrei.g1087.proxy.PictureUpload;
+import tecsor.andrei.g1087.proxy.ProfilePicture;
+import tecsor.andrei.g1087.proxy.ProxyPictureUpload;
+import tecsor.andrei.g1087.proxy.exception.UploadFailedException;
 
 public class TestAssignment {
     public static void main(String[] args) {
@@ -109,5 +113,26 @@ public class TestAssignment {
         userAdapter2Memoji.smile();
         System.out.println();
         //endregion ADAPTER
+
+        //region PROXY
+        System.out.println("==============PROXY==============");
+        PictureUpload picture1 = new ProfilePicture("picture1.jpeg", 26_000_000.0);
+        picture1.upload();
+        picture1.show();
+
+        try {
+            PictureUpload picture1Proxy = new ProxyPictureUpload(picture1);
+            picture1Proxy.upload();
+            picture1Proxy.show();
+        } catch (UploadFailedException e) {
+            e.printStackTrace();
+        }
+
+        PictureUpload picture2 = new ProfilePicture("picture2.jpeg", 18_000_000.0);
+        PictureUpload picture2Proxy = new ProxyPictureUpload(picture2);
+        picture2Proxy.upload();
+        picture2Proxy.show();
+        System.out.println();
+        //endregion PROXY
     }
 }
