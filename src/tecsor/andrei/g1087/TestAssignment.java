@@ -2,10 +2,16 @@ package tecsor.andrei.g1087;
 
 import tecsor.andrei.g1087.adapter.*;
 import tecsor.andrei.g1087.decorator.*;
+import tecsor.andrei.g1087.flyweight.BadgeDetails;
+import tecsor.andrei.g1087.flyweight.BadgeFactory;
+import tecsor.andrei.g1087.flyweight.BadgeType;
+import tecsor.andrei.g1087.flyweight.Model3D;
 import tecsor.andrei.g1087.proxy.PictureUpload;
 import tecsor.andrei.g1087.proxy.ProfilePicture;
 import tecsor.andrei.g1087.proxy.ProxyPictureUpload;
 import tecsor.andrei.g1087.proxy.exception.UploadFailedException;
+
+import java.time.LocalDate;
 
 public class TestAssignment {
     public static void main(String[] args) {
@@ -134,5 +140,25 @@ public class TestAssignment {
         picture2Proxy.show();
         System.out.println();
         //endregion PROXY
+
+        //region FLYWEIGHT
+        System.out.println("==============FLYWEIGHT==============");
+        BadgeDetails badgeDetails1 = new BadgeDetails("Andrei",
+                "src/main/resources/assets/ch1.svg",
+                LocalDate.now());
+        BadgeDetails badgeDetails2 = new BadgeDetails("Marius",
+                "src/main/resources/assets/ch5.svg",
+                LocalDate.of(2021, 5, 1));
+        BadgeDetails badgeDetails3 = new BadgeDetails("Tecsor",
+                "src/main/resources/assets/ch3.svg",
+                LocalDate.of(2021, 3, 3));
+        Model3D silverBadge = BadgeFactory.getBadgeModel(BadgeType.SILVER);
+        Model3D platinumBadge = BadgeFactory.getBadgeModel(BadgeType.PLATINUM);
+        silverBadge.show(badgeDetails1);
+        silverBadge.show(badgeDetails2);
+        silverBadge.show(badgeDetails3);
+        platinumBadge.show(badgeDetails2);
+        System.out.println();
+        //endregion FLYWEIGHT
     }
 }
