@@ -6,11 +6,11 @@ Descrierea problemei care trebuie rezolvată prin pattern:
     se pot schimba automat în funcție de interacțiunea cu aplicația(doar dacă utilizatorul este de acord cu această opțiune)
     sau le poate schimba singur după ce le deblochează.
 
-//TODO: De formulat
 Avantaje pentru soluție:
-    -
-    -
+    - extinderea funcționalității profifului se face dinamic, la run-time
+    - decorarea se face gradual, pe mai multe nivele, neexistând un număr maxim de decorări
 
 Dezavantaje:
-    -
-    -
+    - aplicarea multor decoratori poate crea comportamente nedorite, fiind totodată dificil tinut pasul cu aceștia. De asemenea,
+    codul devine greu de parcurs și înțeles
+    - pot complica procesul de instanțiere a obiectului dorit cu decorările aferente la un moment anume

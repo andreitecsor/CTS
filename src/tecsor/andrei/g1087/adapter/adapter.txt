@@ -7,11 +7,11 @@ Descrierea problemei care trebuie rezolvată prin pattern:
         Totodată, se dorește posibilitatea de utilizare a avatarelor de tip Memoji (create pe dispozitive iOS) prin
     folosirea framework-ului oferit de Apple.
 
-//TODO: De formulat
 Avantaje pentru soluție:
-    -
-    -
+    - nu este nevoie de modificarea claselor pentru a le folosi în același context
+    - este o soluție ușor de înteles din punct de vedere al principiului, întrucât este nevoie doar de un layer intermediar
+    pentru a folosi alte api-uri
 
 Dezavantaje:
-    -
-    -
+    - in cazul JAVA, este nevoie de un număr mai mare de clase (dimensiuna codului se mărește), întrucât nu există moștenire multiplă.
+    - pot exista probleme la apelare din cauza layerului intermediar

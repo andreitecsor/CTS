@@ -11,13 +11,12 @@ Descrierea problemei care trebuie rezolvată prin pattern:
         - MILESTONE -> când utilizatorul își depăsește recordul personal în cadrul unei provocări
         - FOLLOW -> când utilizatorul începe să urmărească un alt utilizator
 
-//TODO: De formulat
 Avantaje pentru soluție:
-    -
-    -
+    - scalabilitate, prin faptul că pot fi generate noi tipuri de postări, în funcție de evoluția aplicației
+    - controlul strict asupra instanțierii obiectelor prin interfața comună, aspect care și simplifică înțelegerea codului
 
 Dezavantaje:
-    -
-    -
+    - numărul mare de clase pentru fiecare tip de postare
+    - modificarea atributelor specifice fiecărei clase devine dificilă (trebuie adăugat cod în plus în interfața comună)
 
 

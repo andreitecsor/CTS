@@ -11,11 +11,11 @@ Descrierea problemei care trebuie rezolvată prin pattern:
     să nu fie nevoie de completarea tuturor la crearea, dar nici să nu fie permisă omiterea pe celor importante.
 
 
-//TODO: De formulat
 Avantaje pentru soluție:
-    -
-    -
+    - provocarea poate fi creată treptat, întrucât utilizatorul specifică ce părți să fie create și ce nu, întrucât nu
+    toate sunt importante
+    - reprezentarea unei provocări se poate face mult mai ușor prin interfața comună
 
 Dezavantaje:
-    -
-    -
+    - se pot omite atribute importante
+    - codul devine complex pe parcurs ce obiectul are din ce in ce mai multe atribute

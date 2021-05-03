@@ -9,15 +9,10 @@ Descrierea problemei care trebuie rezolvată prin pattern:
         Se dorește o conexiune unică între cele două servere, toate request-urile clientului să fie procesate de serverul
     aplicației apoi făcute operațiile la nivelul bazei de date.
 
-//TODO: De reformulat
 Avantaje pentru soluție:
-    - Securitate, întrucât clientul nu are access direct la baza de date pentru a face actualizări.
-    - Există o singură instanță activă în momentul care pornește serverul.
+    - gestiunea centralizată și controlul strict asupra conexiunii unice cu baza de date Neo4J
+    - obiectul Neo4JConnection este creat doar atunci când este nevoie (Lazy instantiation)
 
 Dezavantaje:
-    - Creează dependințe puternice, de pildă: cu driverul, ceea ce pe viitor poate fi un dezavantaj la versiunile mai noi
-    sau alte variante de conectare
-    - Partea de testare si debug este destul de complicată, atât a conexiunii, cât și a claselor de care aceasta depinde,
-    motivul principal fiind tot dependințele.
-    - Codul te poate încurca prin modalitatea de implementare (De ex:Dacă uităm să facem constructorul private... may God have mercy.)
-
+    - nu respecta S-ul din SOLID, intrucat clasa controlează numărul de instanțe
+    - testarea aplicației devine dificilă

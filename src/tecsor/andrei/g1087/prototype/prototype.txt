@@ -9,11 +9,12 @@ Descrierea problemei care trebuie rezolvată prin pattern:
         Se dorește implementarea unei soluții eficiente pentru a mai multe instanțe ale aceleiași medalii.
 
 
-//TODO: De formulat
 Avantaje pentru soluție:
-    -
-    -
+    - reduce complexitatea in timp pentru creare obiectelor 3D, prin evitarea apelului explicit al constructorului, unde
+    are loc procesarea complexă
+    - obiectele de tip medalie 3D se crează rapid prin clonare
 
 Dezavantaje:
-    -
-    -
+    - toate clasele care vor moșteni clasa Badge, vor trebui sa implementeze clone() ceea ce poate fi dificil mai departe
+    si redundant
+    - se poate greși ușor prin aplicare unui shallow-copy în loc de deep-copy

@@ -8,11 +8,11 @@ Descrierea problemei care trebuie rezolvată prin pattern:
         Din cauza bugetului limitat, echipa a decis să punem o limitare de 25MB maxim per poză, astfel se dorește adăugarea
     unui filtru în acest caz.
 
-//TODO: De formulat
 Avantaje pentru soluție:
-    -
-    -
+    - securitatea, controlul asupra requesturilor clientului, dar si filtrarea acestora
+    - implementare simplă și concept ușor de înțeles
+    - incapsularea microserviciilor
 
 Dezavantaje:
-    -
-    -
+    - întârzierea răspunsului de la server
+    - bottleneck
