@@ -17,6 +17,6 @@ Avantaje pentru soluție:
 
 Dezavantaje:
     - numărul mare de clase pentru fiecare tip de postare
-    - modificarea atributelor specifice fiecărei clase devine dificilă (trebuie adăugat cod în plus în interfața comună)
+    - modificarea atributelor specifice fiecărei clase devine dificilă (este nevoie de downcasting)
 
 
