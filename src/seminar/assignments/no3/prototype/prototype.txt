@@ -1,0 +1,20 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        După îndeplinirea fiecărei etape, utilizatorul deblochează o medalie. Fiecare medalie are un model 3D, putând fi
+    vizualizată într-un 3D Viewer. Singurule diferențe între medalii: culoarea și logo-ul asociat provocării (stocat
+    într-un fișir .svg).
+        În aplicație vor apărea mai multe instanțe ale aceleiași medalii, procesul de creare fiind unul costisitor.
+        Se dorește implementarea unei soluții eficiente pentru a mai multe instanțe ale aceleiași medalii.
+
+
+Avantaje pentru soluție:
+    - reduce complexitatea in timp pentru creare obiectelor 3D, prin evitarea apelului explicit al constructorului, unde
+    are loc procesarea complexă
+    - obiectele de tip medalie 3D se crează rapid prin clonare
+
+Dezavantaje:
+    - toate clasele care vor moșteni clasa Badge, vor trebui sa implementeze clone() ceea ce poate fi dificil mai departe
+    si redundant
+    - se poate greși ușor prin aplicare unui shallow-copy în loc de deep-copy

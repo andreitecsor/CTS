@@ -1,0 +1,14 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        Este nevoie de implementarea unei soluții care să gestioneze o structură ierarhică de provocări.
+    O provocare este împărțită în mai multe etape. Totodată, pe lângă etape, o provocare poate să aibă și alte provocări.
+
+Avantaje pentru soluție:
+    - gestiunea facilă a obiectelor din ierarhie, întrucât acestea sunt tratate unitar
+    - scalabilitate, se pot adauga noi componente care implementează si respectă intefata comuna
+
+Dezavantaje:
+    - odată ce ierarhie este definită, design-ul acesteia devine prea general
+    - este dificil să limităm componentele ierarhie la la tipuri specifice

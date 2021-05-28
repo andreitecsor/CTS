@@ -1,0 +1,17 @@
+Titlul temei de licenta:
+    Aplicație web pentru promovarea și integrarea unui stil de viață sustenabil
+
+Descrierea problemei care trebuie rezolvată prin pattern:
+        După îndeplinirea fiecărei etape, utilizatorul deblochează o medalie. Fiecare medalie are un model 3D, putând fi
+    vizualizată într-un 3D Viewer.
+        De menționat este faptul că este nevoie de o soluție eficientă din punct de vedere al memoriei, întrucât generarea
+    unei astfel de medalie necesită un spațiu semnificativ de memorie atât pentru client, cât și pentru aplicație.
+
+Avantaje pentru soluție:
+    - reducerea memoriei ocupată de modelele 3D complexe prin partajarea părții comune între utilizatorii aplicației
+    - reducerea numărului de obiecte identice create
+
+Dezavantaje:
+    - soluția este complexă, poate crea probleme la partea de înțelegere a codului
+    - dacă memoria nu este o problemă, design pattern-ul poate face mai mult rau aplicației decât bine, de aceea trebuie
+    analizate in detaliu clasele si contextul
