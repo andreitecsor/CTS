@@ -123,7 +123,7 @@ public class TestStudentAlteTeste {
         float medieCalculata = student.getMedie();
         long tFinal = System.currentTimeMillis();
 
-        long durataMinima = 10;  //100ms
+        long durataMinima = 1000;  //100ms
         long durata = tFinal - tStart;
         if (durata < durataMinima){
             assertTrue(true);
