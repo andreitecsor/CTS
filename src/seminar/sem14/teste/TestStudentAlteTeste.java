@@ -1,8 +1,9 @@
-package seminar.sem14.modele;
+package seminar.sem14.teste;
 
 import org.junit.*;
 import seminar.sem14.exceptii.ExceptieNota;
 import seminar.sem14.exceptii.ExceptieVarsta;
+import seminar.sem14.modele.Student;
 
 import java.util.ArrayList;
 import java.util.Random;
