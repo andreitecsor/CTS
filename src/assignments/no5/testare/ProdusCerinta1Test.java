@@ -5,6 +5,7 @@ import assignments.no5.model.Produs;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,7 @@ public class ProdusCerinta1Test {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         produseVanduteSaptamanal.clear();
         produseVanduteSaptamanal = null;
         produs = null;
@@ -55,18 +56,21 @@ public class ProdusCerinta1Test {
     }
 
     //cel puțin 2 teste Error Condition pentru fiecare constructor
+    @Category(ErrorConditionTests.class)
     @Test(expected = ValoriInvalideProdusException.class)
     public void constructor2ParametriNumeCuCaractereSpecialeTest() throws ValoriInvalideProdusException {
         Produs produs = new Produs("Laptop#$%", pretInitial);
         fail("Nu am primit exceptie pentru nume invalid");
     }
 
+    @Category(ErrorConditionTests.class)
     @Test(expected = ValoriInvalideProdusException.class)
     public void constructor2ParametriPretNegativTest() throws ValoriInvalideProdusException {
         Produs produs = new Produs("LaptopAsus", Produs.PRET_MIN - 100);
         fail("Nu am primit exceptie pentru pret negativ");
     }
 
+    @Category(ErrorConditionTests.class)
     @Test(expected = ValoriInvalideProdusException.class)
     public void constructor3ParametriPretPozitivMaiMareDecatMaximTest() throws ValoriInvalideProdusException {
         ArrayList<Integer> produseVanduteSaptamanal = new ArrayList<>() {
@@ -81,6 +85,7 @@ public class ProdusCerinta1Test {
 
     }
 
+    @Category(ErrorConditionTests.class)
     @Test(expected = ValoriInvalideProdusException.class)
     public void constructor3ParametriNumeNullTest() throws ValoriInvalideProdusException {
         Produs produs = new Produs(null, pretInitial, produseVanduteSaptamanal);

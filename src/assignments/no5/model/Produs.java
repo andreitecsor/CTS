@@ -4,6 +4,7 @@ import assignments.no5.exceptii.ValoriInvalideProdusException;
 import assignments.no5.exceptii.ValoriLipsaProdusException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -73,7 +74,7 @@ public class Produs {
         produseVanduteSaptamanal.add(produseVandute);
     }
 
-    public int getNrProduseVandute(int indexSaptamana) throws ValoriLipsaProdusException, ValoriLipsaProdusException {
+    public int getNrProduseVandute(int indexSaptamana) throws ValoriLipsaProdusException {
         if (produseVanduteSaptamanal.isEmpty()) {
             throw new ValoriLipsaProdusException("Nu exista valori pentru lista produselor vandute saptamanal");
         }
@@ -102,35 +103,44 @@ public class Produs {
     /*
      * determina procentul saptamanilor (din total saptamani) care au avut vanzari sub limita data
      */
-    public int getProcentSaptamaniSlabe(int minLimit) {
-        float m = 0;
-        for (Integer n : produseVanduteSaptamanal)
-            if (n > minLimit)
-                m += n;
-
-        return (int) (100 * m / this.produseVanduteSaptamanal.size());
+    public float getProcentSaptamaniSlabe(int limitaInferioara) throws ValoriLipsaProdusException {
+        if (produseVanduteSaptamanal.isEmpty()) {
+            throw new ValoriLipsaProdusException("Nu exista valori pentru lista produselor vandute saptamanal");
+        }
+        float nrSaptamaniSlabe = 0;
+        for (Integer produseVandutaPeSaptamana : produseVanduteSaptamanal) {
+            if (produseVandutaPeSaptamana < limitaInferioara) {
+                nrSaptamaniSlabe++;
+            }
+        }
+        return (100 * (nrSaptamaniSlabe / this.produseVanduteSaptamanal.size()));
     }
 
     /*
      * determina indexul saptamanilor cu vanzari maxime (mai multe saptamani pot avea vanzari la nivel maxim)
      */
-    public ArrayList<Integer> getIndexSaptamaniCuVanzariMaxime() {
+    public ArrayList<Integer> getIndexSaptamaniCuVanzariMaxime() throws ValoriLipsaProdusException {
+        if (produseVanduteSaptamanal.isEmpty()) {
+            throw new ValoriLipsaProdusException("Nu exista valori pentru lista produselor vandute saptamanal");
+        }
         ArrayList<Integer> saptamaniMax = new ArrayList<>();
-        int max = this.produseVanduteSaptamanal.get(0);
+        int valoareMaximaDeVanzari = Collections.max(produseVanduteSaptamanal);
 
-        for (int i = 0; i < this.produseVanduteSaptamanal.size(); i++)
-            if (this.produseVanduteSaptamanal.get(i) > max)
-                saptamaniMax.add(i);
+        for (int indexSaptamana = 0; indexSaptamana < this.produseVanduteSaptamanal.size(); indexSaptamana++) {
+            if (this.produseVanduteSaptamanal.get(indexSaptamana) == valoareMaximaDeVanzari) {
+                saptamaniMax.add(indexSaptamana);
+            }
+        }
 
         return saptamaniMax;
     }
 
     @Override
     public String toString() {
-        String output = this.nume + " vanzari saptamanale: ";
-        for (Integer n : produseVanduteSaptamanal)
-            output += n + " ";
-        return output;
+        StringBuilder output = new StringBuilder(this.nume + " vanzari saptamanale: ");
+        for (Integer produseVandutePeSaptamana : produseVanduteSaptamanal)
+            output.append(produseVandutePeSaptamana).append(" ");
+        return output.toString();
     }
 
     private String validareNume(String nume) throws ValoriInvalideProdusException {

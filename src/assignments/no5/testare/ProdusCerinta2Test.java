@@ -7,11 +7,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 public class ProdusCerinta2Test {
     public static Produs produs;
@@ -42,15 +43,12 @@ public class ProdusCerinta2Test {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         produseVanduteSaptamanal.clear();
         produseVanduteSaptamanal = null;
         produs = null;
         produsCuVanzari = null;
     }
-//    adaugaSaptamana()
-//    getNrProduseVandute()
-//    getNrSaptamaniPesteMedie()
 
     //    1 test Right pentru fiecare metodă;
     @Test
@@ -161,7 +159,25 @@ public class ProdusCerinta2Test {
     }
 
     //2 teste de tip Ordering pentru getNrSaptamaniPesteMedie();
+    @Test
+    public void getNrSaptamaniPesteMedieOrderingAscTest()
+            throws ValoriInvalideProdusException, ValoriLipsaProdusException {
+        Collections.sort(produseVanduteSaptamanal);
+        produs.setVanzari(produseVanduteSaptamanal);
+        int valoareAsteptata = produseVanduteSaptamanal.size();
+        int valoareActuala = produs.getNrSaptamaniPesteMedie(Produs.MIN_PRODUSE_VANDUTE_SAPTAMANA);
+        assertEquals(valoareAsteptata, valoareActuala);
+    }
 
+    @Test
+    public void getNrSaptamaniPesteMedieOrderingDescTest()
+            throws ValoriInvalideProdusException, ValoriLipsaProdusException {
+        Collections.sort(produseVanduteSaptamanal, Collections.reverseOrder());
+        produs.setVanzari(produseVanduteSaptamanal);
+        int valoareAsteptata = produseVanduteSaptamanal.size();
+        int valoareActuala = produs.getNrSaptamaniPesteMedie(Produs.MIN_PRODUSE_VANDUTE_SAPTAMANA);
+        assertEquals(valoareAsteptata, valoareActuala);
+    }
 
     //numai pentru getNrSaptamaniPesteMedie() un test de performanță / timp care va verifica dacă funcția returnează un rezultat sub 3 secunde pentru o lista cu 1000 de săptămâni
     @Test(timeout = 3000)
@@ -172,5 +188,19 @@ public class ProdusCerinta2Test {
     }
 
     //2 teste la alegere pentru a verifica alte criterii (altele decât cele de mai sus) pentru orice metodă.
+    @Category(ErrorConditionTests.class)
+    @Test(expected = ValoriLipsaProdusException.class)
+    public void getNrSaptamaniPesteMedieErrorConditionTest()
+            throws ValoriLipsaProdusException {
+        produs.getNrSaptamaniPesteMedie(Produs.MAX_PRODUSE_VANDUTE_SAPTAMANA);
+    }
+
+    @Category(ErrorConditionTests.class)
+    @Test(expected = ValoriLipsaProdusException.class)
+    public void getNrProduseVanduteErrorConditionTest()
+            throws ValoriLipsaProdusException {
+        produsCuVanzari.getNrProduseVandute(produseVanduteSaptamanal.size() + 1);
+    }
+
 
 }
