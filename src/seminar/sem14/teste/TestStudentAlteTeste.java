@@ -1,8 +1,9 @@
-package seminar.sem14.modele;
+package seminar.sem14.teste;
 
 import org.junit.*;
 import seminar.sem14.exceptii.ExceptieNota;
 import seminar.sem14.exceptii.ExceptieVarsta;
+import seminar.sem14.modele.Student;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -122,7 +123,7 @@ public class TestStudentAlteTeste {
         float medieCalculata = student.getMedie();
         long tFinal = System.currentTimeMillis();
 
-        long durataMinima = 10;  //100ms
+        long durataMinima = 1000;  //100ms
         long durata = tFinal - tStart;
         if (durata < durataMinima){
             assertTrue(true);
